@@ -1,0 +1,293 @@
+    /* não conten sobre seletores, margin, padding*/
+    
+    body {
+        background-color: rgba(70, 130, 180, 0.6);
+        /* font-size: 2cm; centimetros
+	font-size: 2mm;/* milimetros
+	font-size: 2pt;/* pt é um pouco maior que pixel*/
+        font-size: 1.15em;
+        /* em varia de acordo com o valor padrão da font, ou seja, se a fonte tem por padrao 10px, 2em seria 20px*/
+        /* propriedades aut explicativas*/
+        text-transform: capitalize;
+        /*text-transform: uppercase;
+	text-transform: lowercase; */
+        /*text-align: center;*/
+        text-align: justify;
+        /* ajusta todas as linhas para o mesmo tamanho*/
+    }
+    
+    #title {
+        color: rgb(186, 133, 9);
+        font-weight: 400;
+    }
+    
+    #service-image {
+        height: 400px;
+        /*valor absoluto de pixels*/
+        width: 70%;
+        /* porcentagem significa que essa div terá 70% de tramanho de largura do parent
+					por ser um valor relativo, vai bem com responsividade*/
+        /*background: linear-gradient(to right, rgb(94,255,126), rgba(94,255,126,0)); comeca com uma cor e termina transparente*/
+        /*background: linear-gradient(to top, blue, steelblue,lightblue, rgba(114, 161, 199, 0)); 
+	comeca com uma cor e termina transparentposivel colocar varias cores e outra direções
+	*/
+        /* Diagonal
+	background: linear-gradient(to bottom right , rgb(94,255,126), rgba(94,255,126,0)); comeca com uma cor e termina transparente
+	*/
+        /* tbm é possível especificar graus como coordenadasd de gradientP
+	background: linear-gradient(215deg , rgb(94,255,126), rgba(94,255,126,0)); */
+        /*Circular, sem o parametro circle ficarai oval, é possível determinar porcentagem para cada cor*/
+        background: radial-gradient(circle, red 20%, blue 40%, green 50%, yellow 90%);
+        border: 10px double darkblue;
+        /* solid, dotted, double...*/
+    }
+    
+    .link {
+        text-decoration: underline;
+        /*text-decoration: none;
+	text-decoration: line-through;
+	text-decoration: overline;
+	*/
+    }
+    
+    .italics {
+        font-style: italic;
+    }
+    
+    #about-us-image {
+        height: 300px;
+        width: 60%;
+        /*vw terá o mesmo efeito que % */
+        margin: 80px 40px;
+        float: right;
+        /*float: right; joga img par a direita e sobre a div de baixo. 
+	Serve para deixar lado a lado divs e conteudos, e.g imagens e textos*/
+    }
+    
+    .site-table {
+        /* alina as "boxes" lado a lado respeitando a width e height e também usa o mínimo espaço possível */
+        display: inline-block;
+        /* display: inline; alina as "boxes" lado a lado porém não permite width e height e usa o minimo espaço possível para
+	alocar o conteúdo */
+        /* display: block; não alinha lado a lado adicionar um break line apos o elemento,
+	 mas respeita a width e height, esse display é usado por
+	padrão quando não definido!!*/
+        /*display: list-item; se comporta como <li>, porém possui uma bolinha antes do elemento*/
+        /*display: table; se comporta como <table> e seus childrens se comportam como table cells*/
+        /*display: table-cell; se comporta como  table cells e seus childrens como table cells também*/
+        /*display: table-row; se comporta como <tr> e seus childrens como table cells*/
+        /*display: flex; se comporta como felx container(block) e seus childrens como felx items(habilita propriedades do flex)*/
+        /*display: inline-flex; se comporta flex container(inline) e seus childrens como table cells, ou seja não a quebra de linha no
+        fim do elemento flex container*/
+        /*display: grid; se comporta como grid(block) e seus childrens como grid items*/
+        /*display: inline-grid; se comporta como grid(inline) e seus childrens como grid items*/
+    }
+    
+    .container {
+        /*propriedades flex usadas nessa classe são para os flex container*/
+        background-color: rgb(250, 250, 250);
+        margin: 10px;
+        height: 300px;
+        /* Transforma a tag em questãoe em flex, e seus filhos em flexs- items, isso habilita as propriedades
+    implementadas abaixo*/
+        display: flex;
+        /* organiza os flex items(childern do html) em coluna na ordem reversa*/
+        flex-direction: column-reverse;
+        /* organiza os flex items(childern do html) em lina na ordem reversa*/
+        flex-direction: row-reverse;
+        /* organiza os flex items(childern do html) em coluna na ordem que consta no html*/
+        flex-direction: column;
+        /* organiza os flex items(childern do html) em linha na  ordem que consta no html*/
+        flex-direction: row;
+        /*ultimo elemento que é renderizado no css*/
+        justify-content: space-between;
+        /* Definido por padra, não define quebra de linha, expreme os flex items numa linha só*/
+        flex-wrap: nowrap;
+        /* Realiza a quebra de linha mas inverte, indo a primeira para o fim e a ultima para o inicio*/
+        flex-wrap: wrap-reverse;
+        /* Defina uma quebra de linha, ou seja, faz um enter e cria uma nova linha para agrupar os flex items*/
+        flex-wrap: wrap;
+        /* organiza os flex items no centro(horizontal)*/
+        justify-content: center;
+        /* organiza os flex items agrupados no inicio do flex container (horizontal)*/
+        justify-content: flex-start;
+        /* organiza os flex items no fim do flex container (horizontal)*/
+        justify-content: flex-end;
+        /*organiza os felx items espaçados em que haverá um no incio outro no fim e os demais no
+    meio com espaço entre (horizontal)*/
+        justify-content: space-between;
+        /* igual ao de cima, porém os items terão menos margin (horizontal)*/
+        justify-content: space-around;
+        /* igual ao de cima, porém com menos margin ainda entre os items (horizontal)*/
+        justify-content: space-evenly;
+        /* conceitos iguais aos anteriores, porém, o align-items alinhas os flex items pela verticalmente
+    sendo centre, no centro no flex container, flex-start no inicio do flex container e 
+    flex-end no fim do flex container(verticalmente falando). O valor center ainda alinhas os childers do flex-item,
+    ou seja, alinha o texto da div que tem container-item como classe no centro*/
+        align-items: center;
+        align-items: flex-end;
+        align-items: flex-start;
+        /*alinha ocupando a aultura inteira, do top a base e alinhas os childers no centro*/
+        align-items: stretch;
+        /*deixa os flex items no topo, verticalmente falando, e alinha os childerns por uma linha sublinahndo-os,
+    como se fosse uma underline alinhando os valores dos flex items*/
+        align-items: baseline;
+        /* basicamente o justify-content alinha os felx items e o align-items alinhas os childers nos flex items e suas bordas
+    em cada situação*/
+        /* qualquer duvida pesquisar em 
+    https://cssreference.io/property/align-items/
+    e
+    https://cssreference.io/
+    */
+        /* A propriedade order deve ser usada diretamente na tag ou ter uma classe sem serpada,
+    se não, não faz sentido usar numa classe em comun, pois o objetivo é mudar a ordem,
+    https://cssreference.io/property/order/
+    */
+    }
+    
+    .container-item {
+        /*propriedades flex usadas nessa classe são para os flex items*/
+        background-color: rgb(36, 130, 39);
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        width: 70px;
+        line-height: 50px;
+        margin: 10px;
+        /*Porpriedades so funcionam com display: flex; no container parent*/
+        /* define um minimun width para os flex items, 
+        deve ser indicada no flex item e podem assumir diferentes valores*/
+        flex-basis: 50px;
+        /* Define o quanto um flex item deve crescer se tiver espaço disponível
+        valores diferentes causam tamanhos distintos nos flex items*/
+        flex-grow: 1;
+        /* Define o quanto o flex item deve encolher caso não haja espaço suficiente,
+        serve para casos em que a tela é menor que o width do flex container ou ate dp felx item*/
+        flex-shrink: 3;
+        /* Basicamnete o grow e o shrink definem o quanto o flex items cresce ou dinimiu conforme
+        a disponibilidade de tamanho do flex container e consequentemente, do tamanha do tela,
+        que altera diretamente do tamanho do flex container*/
+        /* flex tem a seguinte sintaxe: flex: grow shrink basis*/
+        flex: 0 0 110px;
+        /* align-self se aplica ao flex items mas faz mais sentido usado unicamente no flex item,
+        compartilha-lo numa classe de flex items não faz muito sentido, pois faria com todos, o que o align-items ja faz
+        e o justify-content faz na horizontal*/
+        align-self: center;
+        /*align-content: center; define como cada linha do flex container sera organizada,
+        não se trada dos flex items ou do conteúdo dos flex items, 
+        mas sim da linha deles, ou seja, como se houvesse uma div envolvendo cada linha
+        do flex container, logo, envolvendo os flex items linha a linha. 
+        Dessa forma, strech faria cada linha ocupar o espaço sobrando do flex container, 
+        flex-start as linhas ocupariam o inicio, cada uma de acordo com a altura do seu maior flex item, 
+        flex-end igual mas para o fim,
+        center -> igual, mas para o centro, 
+        space-between, duas linhas vão para cada extremo e se houver outras, vão sendo espaçadas no meio,
+        space-around igual mas com algum margin nas linhas.
+        aling-content so funciona se flex-wrap: wrap; for usado
+        https://cssreference.io/property/align-content/
+        */
+    }
+    
+    .grid-container {
+        background-color: rgb(250, 250, 250);
+        margin: 10px;
+        height: 500px;
+        /*container vira um grid container e os child elemens viram grid items*/
+        display: grid;
+        grid-template-columns: auto auto auto;
+        /* define um espaçamento entre as colunas*/
+        grid-column-gap: 150px;
+        grid-template-rows: auto auto;
+        /* define um espaçamento entre as linhas*/
+        grid-row-gap: 150px;
+        /*define o gap para linha e coluna(nessa ordem)*/
+        grid-gap: 10px 10px;
+        /*
+        justify-content e align-content também trabalho com grid
+        justify-content: center;
+        align-content: flex-start;
+        */
+    }
+    
+    .grid-item {
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        width: 70px;
+        line-height: 40px;
+        margin: 10px;
+        /* opções usadas individualmente, definem onde o grid em questão começa e termina(começa / termina),
+        usadas em classes partilhadas pelosi items perde o sentido 
+        grid-row: 1 / 3;
+        grid-column: 2/3;
+        */
+        /* atalho para grid-row-start grid-row-end grid-column-start grid-colums-end
+        também deve ser usado individualmente, compartilha-lo pelos grid items perde o sentido
+        grid-area: 2 / 1 / span 2 / span 3;
+        */
+    }
+    
+    .submit-button {
+        margin: 20px 10px;
+        padding: 10px 15px;
+        border: none;
+        text-decoration: none;
+        font-family: "Lato", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        color: white;
+        background: rgb(89, 150, 255);
+        /* atalho para transition-property transition-duration transition-timing-function e transition-delay,
+        definem, respectivamente, q a propriedade para transicionar, a duração da transição, a função de transição
+        e o deplay para a transição iniciar, é possivel omitir alguns parametros.*/
+        /* transition-timing-function define como os valores de inicio e fim
+        são transmitidos e calculados, ou seja, ease inicia lento, acelera no meio e freia no fim.
+        há muitos outros valores.
+        é possível passar mais d euma propriedade no primeira parametro(bg, padding)
+        https://cssreference.io/property/transition-timing-function/
+        */
+        /* chrome*/
+        transition: background, padding 500ms ease;
+        /* mozilla */
+        -moz-transition: background, padding 500ms ease;
+        /* Opera */
+        -o-transition: background, padding 500ms ease;
+    }
+    
+    .submit-button:hover {
+        color: black;
+        background-color: rgb(147, 187, 255);
+        padding: 20px 30px;
+    }
+    
+    #about-me {
+        animation-name: translate-element;
+        animation-duration: 4s;
+        animation-timing-function: ease;
+        animation-delay: 2s;
+        animation-iteration-count: 2;
+        animation-direction: alternate-reverse;
+        /*todas essas propriedades podem ser agrupadas assim: 
+        animation: translate-element 4s ease 2s 2 alternate-reverse;
+        -webkit-animation:
+        -moz-animation:
+        -ms-animation:
+        -o-animation:
+
+        */
+    }
+    
+    @keyframes translate-element {
+        0% {
+            background: red;
+            transform: translate(0px, 0px);
+        }
+        50% {
+            background: green;
+            transform: translate(100px, 500px);
+        }
+        100% {
+            background: blue;
+            transform: translate(200px, 200px);
+        }
+    }
